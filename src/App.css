@@ -1,0 +1,132 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: Verdana, sans-serif;
+}
+
+:root {
+  --hue-neutral: 200;
+  --hue-wrong: 0;
+  --hue-correct: 145;
+
+}
+
+body {
+  --hue: var(--hue-neutral);
+  padding: 0;
+  margin: 0;
+  background-color: hsl(var(--hue), 100%, 20%);
+}
+
+.score-board {
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 2px;
+}
+
+.question-counter {
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 2px;
+}
+
+body.correct {
+  --hue: var(--hue-correct);
+}
+
+body.wrong {
+  --hue: var(--hue-wrong);
+}
+
+.frame {
+  justify-content: center;
+  align-items: center; 
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  width: 800px;
+  max-width: 80%;
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 0 10px 2px;
+}
+
+
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.btn {
+  --hue: var(--hue-neutral);
+  border: 1px solid hsl(var(--hue), 100%, 30%);
+  background-color: hsl(var(--hue), 100%, 50%);
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: white;
+  outline: none;
+}
+
+.btn:hover {
+  border-color: black;
+}
+
+.next-btn {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 10px 20px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-correct {
+  --hue: var(--hue-correct);
+  border: 1px solid hsl(var(--hue), 100%, 30%);
+  background-color: hsl(var(--hue), 100%, 50%);
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: black;
+  outline: none;
+}
+
+.btn-correct:hover {
+  border-color: black;
+}
+
+.btn-incorrect {
+  --hue: var(--hue-wrong);
+  border: 1px solid hsl(var(--hue), 100%, 30%);
+  background-color: hsl(var(--hue), 100%, 50%);
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: white;
+  outline: none;
+}
+
+.btn-incorrect:hover {
+  border-color: black;
+}
+
+.finished {
+  text-align: center;
+}
+
+
+
