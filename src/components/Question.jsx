@@ -39,21 +39,23 @@ const Question = () => {
     }
 
     const clearTimer = (e) => {
-  
-        // If you adjust it you should also need to
-        // adjust the Endtime formula we are about
-        // to code next    
         setTimer('00:00:10');
-  
-        // If you try to remove this line the 
-        // updating of timer Variable will be
-        // after 1000ms or 1sec
+        
         if (Ref.current) clearInterval(Ref.current);
+        
         const id = setInterval(() => {
             startTimer(e);
-        }, 1000)
+            // Check if the timer has reached 0
+            if (getTimeRemaining(e).total <= 0) {
+                // Move to the next question
+                setNum(num => num + 1)
+                handeClick();
+            }
+        }, 1000);
+    
         Ref.current = id;
-    }
+    };
+    
 
     const getDeadTime = () => {
         let deadline = new Date();
@@ -116,7 +118,7 @@ const Question = () => {
             <h2>{timer}</h2>
         </div>
         <div className="question-counter">
-            <h1>Question: {num}/10</h1>
+            <h1>Question: {num > 10 ? 10 : num}/10</h1>
         </div>
         <div className="frame">
             <div className="container">
