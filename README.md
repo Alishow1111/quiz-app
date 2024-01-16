@@ -4,6 +4,8 @@ Multiple Choice Quiz/Trivia which gives the user 10 questions (each with 4 choic
 
 User can view their score as well as which question they are on at the top of the screen alongisde the timer.
 
+Link to hosted App: https://alisfunquiz.netlify.app/
+
 ## How to run locally
 In your terminal enter the command: 
 ```
